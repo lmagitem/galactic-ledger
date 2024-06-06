@@ -1,0 +1,180 @@
+@use '@angular/material' as mat;
+@import '@angular/material/prebuilt-themes/pink-bluegrey.css';
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Ubuntu+Mono&display=swap');
+@include mat.core();
+
+$galactic-ledger-primary: mat.define-palette(mat.$teal-palette, A200, A100, A400);
+$galactic-ledger-accent: mat.define-palette(mat.$orange-palette, A200, A100, A400);
+$galactic-ledger-warn: mat.define-palette(mat.$red-palette);
+$galactic-ledger-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $galactic-ledger-primary,
+      accent: $galactic-ledger-accent,
+      warn: $galactic-ledger-warn,
+    ),
+    typography: mat.define-typography-config(),
+    density: 0,
+  )
+);
+@include mat.all-component-themes($galactic-ledger-theme);
+
+html {
+  ---darkest: #121212;
+  ---pixi-dark: #222222;
+  ---dark: #2b2a38;
+  ---dark-grey: #282828;
+  ---less-dark-grey: #363636;
+  ---grey: #404040;
+  ---light-grey: #69696e;
+  ---light: #b3b3b3;
+  ---lightest: #dcdcdc;
+  ---red: #470d0d;
+  ---orange: #79460d;
+  ---yellow: #4d4500;
+  ---green: #226105;
+  ---blue: #193d74;
+  ---red-star: #470d0d;
+  ---orange-star: #8a3904;
+  ---yellow-star: #a18308;
+  ---green-star: #0d470d;
+  ---blue-star: #0d0d47;
+  ---white-star: #a8a8a8;
+  ---violet-star: #470d47;
+  ---brown-dwarf: #2d1b0d;
+  ---xbh-star: #000000;
+  ---text: #ffffff;
+
+  margin: 0;
+  height: 100%;
+  font-family: 'Ubuntu Mono', monospace, 'Courier New', Courier;
+  line-height: 1.2em;
+  background: radial-gradient(circle, var(---dark) 0%, var(---darkest) 100%);
+}
+
+body {
+  background: var(---dark-grey);
+  border: 4px dashed var(---light-grey);
+  color: var(---light);
+  margin: 20px 40px;
+  padding: 2px 14px;
+  border-radius: 6px;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  min-height: 600px;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.buttons-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: -12px;
+}
+
+.subtitle {
+  margin: 0 !important;
+}
+
+.id-font {
+  font-weight: 300;
+}
+
+.mat-mdc-mini-fab .mat-mdc-button-touch-target {
+  width: 26px !important;
+  height: 26px !important;
+}
+
+.mdc-tab {
+  height: 36px !important;
+}
+
+.astronomical-object-details-container {
+  margin: 0 0 6px 0;
+  padding: 0 0 12px 0;
+}
+
+.astronomical-object-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  margin: 0 !important;
+  padding: 0 18px;
+}
+
+.zone-red {
+  background-color: var(---red);
+  color: var(---light);
+}
+.zone-orange {
+  background-color: var(---orange);
+  color: var(---light);
+}
+.zone-yellow {
+  background-color: var(---yellow);
+  color: var(---light);
+}
+.zone-green {
+  background-color: var(---green);
+  color: var(---light);
+}
+.zone-blue {
+  background-color: var(---blue);
+  color: var(---light);
+}
+.zone-black {
+  background-color: var(---darkest);
+  color: var(---light);
+}
+
+/* Red Star */
+.red-star-container {
+  background-color: var(---red-star);
+  color: var(---text);
+}
+
+/* Orange Star */
+.orange-star-container {
+  background-color: var(---orange-star);
+  color: var(---text);
+}
+
+/* Yellow Star */
+.yellow-star-container {
+  background-color: var(---yellow-star);
+  color: var(---text);
+}
+
+/* Blue Star */
+.blue-star-container {
+  background-color: var(---blue-star);
+  color: var(---text);
+}
+
+/* White Star */
+.white-star-container {
+  background-color: var(---white-star);
+  color: var(---pixi-dark);
+}
+
+/* Violet Star */
+.violet-star-container {
+  background-color: var(---violet-star);
+  color: var(---text);
+}
+
+/* Brown Dwarf */
+.brown-dwarf-container {
+  background-color: var(---brown-dwarf);
+  color: var(---text);
+}
+
+/* Black Hole */
+.black-hole-container {
+  background-color: var(---xbh-star);
+  color: var(---text);
+}

@@ -1,0 +1,3 @@
+<mat-slide-toggle color="primary" (change)="toggleDetails()" [checked]="(openDetails | async) ?? false">
+  {{ (openDetails | async) ?? false ? 'Close all details' : 'Open all details' }}
+</mat-slide-toggle>

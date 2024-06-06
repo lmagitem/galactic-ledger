@@ -1,0 +1,36 @@
+.celestial-body ul {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+.orbital-point-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.orbital-point-label {
+  flex-grow: 1;
+  margin: 4px 10px;
+}
+
+.orbital-point-show-children {
+  margin-left: 20px;
+}
+
+.orbital-point-show-infos {
+  margin-right: 20px;
+}
+
+.mat-mdc-mini-fab {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px !important;
+  font-size: 16px;
+}
+
+.mat-mdc-mini-fab .mat-icon {
+  font-size: 18px;
+  line-height: 24px;
+}

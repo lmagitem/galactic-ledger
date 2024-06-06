@@ -1,0 +1,3 @@
+<mat-slide-toggle color="primary" (change)="toggleChildren()" [checked]="(openChildren | async) ?? false">
+  {{ (openChildren | async) ?? false ? 'Close all children' : 'Open all children' }}
+</mat-slide-toggle>

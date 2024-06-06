@@ -1,0 +1,20 @@
+<div class="coordinate-controls-container">
+  @for (axis of possibleAxis; track axis) {
+    <ng-container>
+      <div class="coordinate-control">
+        <button mat-mini-fab matTooltip="Primary" color="secondary" class="btn-decrement" (click)="decrement(axis)">-</button>
+        <mat-form-field appearance="fill">
+          <mat-label>{{ axis.toUpperCase() }} Coordinate</mat-label>
+          <input
+            matInput
+            type="number"
+            [ngModel]="coordinates[axis]"
+            (keyup)="updateSystem($event, axis)"
+            (change)="updateSystem($event, axis)"
+          />
+        </mat-form-field>
+        <button mat-mini-fab matTooltip="Primary" color="secondary" class="btn-increment" (click)="increment(axis)">+</button>
+      </div>
+    </ng-container>
+  }
+</div>

@@ -1,0 +1,12 @@
+<div>
+  <ul>
+    <li>
+      <app-celestial-body
+        [orbitalPoint]="(system | async)?.center"
+        [system]="(system | async) ?? undefined"
+        [openChildren]="(openChildren | async) ?? false"
+        [openDetails]="(openDetails | async) ?? false"
+      ></app-celestial-body>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,26 @@
+<form [formGroup]="settingsForm">
+  @for (field of formConfig; track field) {
+    <ng-container>
+      @if (field.type === 'textbox') {
+        <ng-container>
+          <app-textbox [control]="getFormControl(field.name)"></app-textbox>
+        </ng-container>
+      }
+      @if (field.type === 'checkbox') {
+        <ng-container>
+          <app-checkbox [control]="getFormControl(field.name)" [label]="field.label"></app-checkbox>
+        </ng-container>
+      }
+      @if (field.type === 'select') {
+        <ng-container>
+          <app-select [control]="getFormControl(field.name)" [options]="field.options"></app-select>
+        </ng-container>
+      }
+      @if (field.type === 'number') {
+        <ng-container>
+          <app-numberinput [control]="getFormControl(field.name)"></app-numberinput>
+        </ng-container>
+      }
+    </ng-container>
+  }
+</form>

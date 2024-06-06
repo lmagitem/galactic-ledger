@@ -1,0 +1,5 @@
+@if (control) {
+  <select [formControl]="control">
+    <option *ngFor="let option of options" [value]="option.value">{{ option.label }}</option>
+  </select>
+}

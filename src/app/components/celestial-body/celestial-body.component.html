@@ -1,0 +1,44 @@
+<div class="celestial-body {{ getZoneCSSClass(orbitalPoint?.ownOrbit?.zone, orbitalPoint) }}">
+  @if (orbitalPoint) {
+    <div class="orbital-point-container">
+      <button
+        class="orbital-point-show-children"
+        mat-mini-fab
+        matTooltip="Primary"
+        color="{{ showChildren ? 'accent' : 'primary' }}"
+        (click)="toggleShowChildren()"
+      >
+        <mat-icon>{{ showChildren ? 'arrow_drop_down' : 'chevron_right' }}</mat-icon>
+      </button>
+      <h3 class="orbital-point-label" [innerHTML]="getLabel()"></h3>
+      <button
+        class="orbital-point-show-infos"
+        mat-mini-fab
+        matTooltip="Primary"
+        color="{{ showDetails ? 'accent' : 'primary' }}"
+        (click)="toggleShowDetails()"
+      >
+        <mat-icon>{{ showDetails ? 'indeterminate_check_box' : 'add_box' }}</mat-icon>
+      </button>
+    </div>
+    <ul>
+      @if (showDetails) {
+        <li class="astronomical-object-details-container" [innerHTML]="getDetails()"></li>
+      }
+      @if (showChildren) {
+        @for (child of orbitalPoint.orbits; track child) {
+          @if (child.primaryBody) {
+            <li>
+              <app-celestial-body
+                [orbitalPoint]="child.primaryBody"
+                [system]="system"
+                [openChildren]="openChildren"
+                [openDetails]="openDetails"
+              ></app-celestial-body>
+            </li>
+          }
+        }
+      }
+    </ul>
+  }
+</div>
